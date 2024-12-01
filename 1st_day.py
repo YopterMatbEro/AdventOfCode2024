@@ -1008,8 +1008,10 @@ for i in range(0, len(new_text), 2):
     left.append(new_text[i])
     right.append(new_text[i+1])
 
-range_list = []
-[range_list.append(abs(int(a) - int(b))) for a, b in zip(left, right)]
+left = sorted(list(map(int, left)))
+right = sorted(list(map(int, right)))
 
-result = sum(map(int, range_list))
-print(result)
+ranges_list = []
+[ranges_list.append(abs(int(a) - int(b))) for a, b in zip(left, right)]
+
+print(sum(ranges_list))
