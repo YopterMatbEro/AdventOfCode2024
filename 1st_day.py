@@ -1015,3 +1015,10 @@ ranges_list = []
 [ranges_list.append(abs(int(a) - int(b))) for a, b in zip(left, right)]
 
 print(sum(ranges_list))
+
+matches = 0
+
+for i in left:
+    matches += i * right.count(i)
+
+print(matches)
